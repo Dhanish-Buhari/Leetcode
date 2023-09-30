@@ -1,19 +1,23 @@
 class Solution {
     public int maxSubarrays(int[] nums) {
-        int and = Integer.MAX_VALUE;
-        for(int a:nums){
-            and&=a;
+        int arr[] = nums;
+        int and = nums[0];
+        for(int i=1; i<nums.length; i++){
+            and&=nums[i];
         }
         int ans = 0;
-        int curr = Integer.MAX_VALUE;
+        int var = nums[0];
         for(int i=0; i<nums.length; i++){
-            if(curr==Integer.MAX_VALUE)curr=nums[i];
+            if(var==Integer.MAX_VALUE)var=nums[i];
             else{
-                curr&=nums[i];
+            var&=nums[i];
             }
-            if(curr==and){
+            if(var==and){
                 ans++;
-                curr=Integer.MAX_VALUE;
+                // if(i+1<nums.length){
+                //     var=nums[i+1];
+                // }
+                var=Integer.MAX_VALUE;
             }
         }
         return and==0?ans:1;
