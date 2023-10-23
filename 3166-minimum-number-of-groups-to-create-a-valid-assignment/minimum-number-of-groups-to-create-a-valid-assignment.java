@@ -15,7 +15,6 @@ class Solution {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -32,7 +31,7 @@ class Solution {
             minimumCount = Math.min(minimumCount, count);
         }
 
-        for (int i = minimumCount + 1; i > 0; i--) {
+        for (int i = minimumCount + 1; i >=1; i--) {
             if (isPossible(i, countMap)) {
                 int result = 0;
                 for (int count : countMap.values()) {
