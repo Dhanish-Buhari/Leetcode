@@ -14,8 +14,6 @@ class Solution {
         if (memo[i][freeCount] != -1) {
             return memo[i][freeCount];
         }
-        
-        // Take and add to freeCount and we did not take the last freeCount
         int take = dp(prices, i+1, i+1) + prices[i];
         int takeForFree = Integer.MAX_VALUE;
         
